@@ -20,13 +20,9 @@ import java.util.List;
 public class Subscribers {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private long sub_id;
     private String phone;
-
-    @Enumerated(value = EnumType.STRING )
-    private InviteStatus status;
+    private Boolean status;
 
     @UpdateTimestamp
     @DateTimeFormat(pattern="dd-MM-yyyy HH:mm")

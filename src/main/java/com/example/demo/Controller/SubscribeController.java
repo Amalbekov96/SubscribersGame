@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
-@RequestMapping("/subscribes")
+@RestController
+@RequestMapping("subscribes")
 public class SubscribeController {
 
     private SubscriberService subscriberService;
@@ -41,5 +41,10 @@ public class SubscribeController {
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         subscriberService.deleteById(id);
+    }
+
+    @PostMapping("/invite")
+    public void invite(@PathVariable Long id){
+
     }
 }
