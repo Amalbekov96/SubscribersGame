@@ -34,7 +34,7 @@ public class SubscribeController {
 
     @PutMapping("/update/{id}")
     public Subscribers update(@RequestBody Subscribers subscriber, @PathVariable Long id){
-        subscriber.setId(id);
+        subscriber.setSub_id(id);
         return subscriberService.update(subscriber);
     }
 
