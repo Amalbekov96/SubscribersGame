@@ -1,7 +1,6 @@
 package com.example.demo.Entity.Dto;
 
 import com.example.demo.Entity.Enums.InviteStatus;
-import com.example.demo.Entity.Subscribers;
 import lombok.Data;
 
 import java.util.Date;
