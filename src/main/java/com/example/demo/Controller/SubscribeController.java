@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("subscribes")
+@Controller
+@RequestMapping("/subscribes")
 public class SubscribeController {
 
     private SubscriberService subscriberService;
@@ -34,17 +34,12 @@ public class SubscribeController {
 
     @PutMapping("/update/{id}")
     public Subscribers update(@RequestBody Subscribers subscriber, @PathVariable Long id){
-        subscriber.setId(id);
+        subscriber.setSub_id(id);
         return subscriberService.update(subscriber);
     }
 
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id){
         subscriberService.deleteById(id);
-    }
-
-    @PostMapping("/invite")
-    public void invite(@PathVariable Long id){
-
     }
 }

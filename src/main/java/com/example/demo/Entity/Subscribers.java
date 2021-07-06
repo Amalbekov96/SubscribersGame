@@ -20,8 +20,11 @@ import java.util.List;
 public class Subscribers {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long sub_id;
+
     private String phone;
+
     private Boolean status;
 
     @UpdateTimestamp

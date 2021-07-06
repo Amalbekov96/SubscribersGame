@@ -1,5 +1,6 @@
 package com.example.demo.Service;
 
+import com.example.demo.Entity.Dto.SubscribeDto;
 import com.example.demo.Entity.Subscribers;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface SubscriberService {
     void deleteById(Long id);
     List<Subscribers> findAll();
 
+    public SubscribeDto getOrCreate(SubscribeDto subscribeDto);
 }

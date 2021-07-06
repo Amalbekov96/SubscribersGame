@@ -24,7 +24,7 @@ public class Invites {
     private long id;
 
     @ManyToOne
-     private Subscribers sender;
+    private Subscribers sender;
     
     @ManyToOne
     private Subscribers receiver;

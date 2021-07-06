@@ -1,14 +1,14 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Entity.Dto.InviteDto;
 import com.example.demo.Entity.Invites;
 import com.example.demo.Service.InviteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/invite")
 public class InviteController {
 
@@ -43,5 +43,10 @@ public class InviteController {
     }
 
 
+    @PostMapping("/send")
 
+    public InviteDto send(@RequestBody InviteDto inviteDto)
+    {
+            return inviteService.sendInvite(inviteDto);
+    }
 }
