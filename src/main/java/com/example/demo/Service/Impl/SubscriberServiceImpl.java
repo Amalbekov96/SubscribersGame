@@ -1,21 +1,24 @@
 package com.example.demo.Service.Impl;
 
+import com.example.demo.Entity.Dto.InviteDto;
 import com.example.demo.Entity.Dto.SubscribeDto;
+import com.example.demo.Entity.Invites;
 import com.example.demo.Entity.Subscribers;
 import com.example.demo.Exceptions.SubscriberNotFound;
+import com.example.demo.Mapper.InviterMapper;
 import com.example.demo.Mapper.SubscriberMapper;
 import com.example.demo.Repo.SubscriberRepo;
+import com.example.demo.Service.InviteService;
 import com.example.demo.Service.SubscriberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.SecondaryTable;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class SubscriberServiceImpl implements SubscriberService {
-
 
     private SubscriberRepo subscriberRepo;
     private SubscriberMapper subscriberMapper;
@@ -30,7 +33,7 @@ public class SubscriberServiceImpl implements SubscriberService {
         Subscribers subscriber = subscriberMapper.toSubscriber(subscribeDto);
 
         try {
-            subscriber = subscriberRepo.findById(subscriber.getSub_id()).orElseThrow(() -> new SubscriberNotFound());
+            subscriber = subscriberRepo.findById(subscriber.getId()).orElseThrow(() -> new SubscriberNotFound());
         } catch(SubscriberNotFound e){
             subscriber.setAddDate(new Date());
             subscriber.setEditDate(new Date());
@@ -38,6 +41,7 @@ public class SubscriberServiceImpl implements SubscriberService {
         }
             return subscriberMapper.toSubscriberDto(subscriber);
     }
+
 
 
 

@@ -1,16 +1,21 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Entity.Dto.InviteDto;
+import com.example.demo.Entity.Dto.SubscribeDto;
 import com.example.demo.Entity.Invites;
+import com.example.demo.Entity.Subscribers;
 import com.example.demo.Service.InviteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/invite")
 public class InviteController {
+
 
     private InviteService inviteService;
 
@@ -33,7 +38,6 @@ public class InviteController {
 
     @PutMapping("/update/{id}")
     public Invites update(@RequestBody Invites invite, @PathVariable Long id){
-        invite.setId(id);
         return inviteService.update(invite);
     }
 
@@ -42,11 +46,20 @@ public class InviteController {
         inviteService.deleteById(id);
     }
 
-
     @PostMapping("/send")
-
     public InviteDto send(@RequestBody InviteDto inviteDto)
     {
             return inviteService.sendInvite(inviteDto);
     }
+
+    @PutMapping("/accept/{id}")
+    public ResponseEntity<String> accept(@PathVariable("id") Long id){
+        return inviteService.accept(id);
+    }
+
+    @PutMapping("/activate")
+    public ResponseEntity<String> accept(@RequestBody SubscribeDto receiberDto){
+        return inviteService.activate(receiberDto);
+    }
+
 }

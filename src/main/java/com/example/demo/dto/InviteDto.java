@@ -2,10 +2,6 @@ package com.example.demo.dto;
 
 import com.example.demo.Entity.Enums.InviteStatus;
 import com.example.demo.Entity.Subscribers;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;

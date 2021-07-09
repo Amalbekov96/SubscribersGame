@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/subscribes")
 public class SubscribeController {
 
@@ -25,7 +25,6 @@ public class SubscribeController {
 
     @GetMapping("/findAll")
     public List<Subscribers> findAll(){
-        System.out.println("Wine");
         return subscriberService.findAll();
     }
 
@@ -34,7 +33,7 @@ public class SubscribeController {
 
     @PutMapping("/update/{id}")
     public Subscribers update(@RequestBody Subscribers subscriber, @PathVariable Long id){
-        subscriber.setSub_id(id);
+        subscriber.setId(id);
         return subscriberService.update(subscriber);
     }
 

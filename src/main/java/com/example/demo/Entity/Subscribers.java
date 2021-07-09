@@ -21,7 +21,7 @@ public class Subscribers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long sub_id;
+    private long id;
 
     private String phone;
 

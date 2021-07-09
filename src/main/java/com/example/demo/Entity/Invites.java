@@ -34,9 +34,8 @@ public class Invites {
     @Column(name = "add_date")
     private Date startDate;
 
-    @UpdateTimestamp
     @DateTimeFormat(pattern="dd-MM-yyyy HH:mm")
-    @Column(name = "edit_date")
+    @Column(name = "endDate")
     private Date endDate;
 
     @Enumerated(value = EnumType.STRING )
