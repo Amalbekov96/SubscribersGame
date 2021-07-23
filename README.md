@@ -14,6 +14,7 @@
 6. Если абонент Б был ранее приглашен, но не успел активировать инвайт, то предыдущий
 инвайт становится не активным. Каждый новый инвайт заменяет предыдущий
 7. Абонент А может приглашать абонента Б только раз в сутки
+```java
 
 Api/v1/Invite/send - POST
  Request body – {
@@ -27,17 +28,18 @@ Api/v1/Invite/send - POST
   },
 }
 
-Subscriber/block
-Requestparam – active (true/false)
-subscriber:{
+ Subscriber/block
+ Requestparam – active (true/false)
+ subscriber:{
 
-“subs_id”:12414,
-“phone_number”:”05555555555”
+ “subs_id”:12414,
+ “phone_number”:”05555555555”
 },
 
 Invite/accept
 Requetsparam – subs_id
 
+```
 Принятие приглашения:
 1. Абонент Б регистрируется в приложении
 2. Проверяем, сущетствует ли абонент Б в сервисе
